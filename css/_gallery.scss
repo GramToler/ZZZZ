@@ -1,0 +1,93 @@
+div.assets {
+	.folder, .file {
+		float: left;
+	}
+	.folder, .file {
+		position:relative;
+		float: left;
+		width: 16em;
+		height: 16em;
+		background-color: $white-color;
+		padding: 1em;
+		margin: 1em;
+		border-radius: 1ex;
+		cursor: pointer;
+		border: 1px solid $grey-color;
+		box-shadow: $small-box-shadow;
+		.name {
+			display: block;
+			position: absolute;
+			background-color: $white-color;
+			padding: 2ex;
+			bottom: 0;
+			left: 0;
+			border-radius: 0 1ex 1ex 1ex;
+			max-width: 100%;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			text-size: $small-font-size;
+			overflow: hidden;
+			a {
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				overflow: hidden;
+			}
+			&.x-jpeg,
+			&.x-jpg,
+			&.x-png {
+				display: none;
+			}
+		}
+		&:hover .name, {
+			display: block;
+			background-color: $less-grey-color;
+		}
+		&:hover {
+			background-color: $less-grey-color;
+		}
+	}
+	.folder {
+		background-color: $grey-color;
+		.name {
+			display: block;
+			background-color: $grey-color;
+		}
+	}
+	@media only screen and (max-width: $mobile-width) {
+    	.folder, .file  {
+    		width: 9em;
+			height: 9em;
+			.name {
+				padding: 1ex;
+			}
+		}
+	}
+	.file {
+		.thumb {
+			width:100%;
+		}
+		&.image {
+			.slide {
+				display: block;
+				position:absolute;
+				top: 1em;
+				bottom: 1em;
+				left: 1em;
+				right: 1em;
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+
+				.slideicon {
+					margin:auto 10%;
+					width: 80%;
+					height: 80%;
+				}
+			}
+
+		}
+	}
+	.stopper {
+		clear:both;
+	}
+}

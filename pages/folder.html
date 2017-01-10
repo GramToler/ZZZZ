@@ -1,0 +1,48 @@
+{{#if searchIsEmpty}}
+	<table class="no-results"><tr><td>{{svg "img/icons/search.svg" class="icon"}}</td><td>No Results for "{{searchTerm}}"</td></tr></table>
+{{else}}
+	<div class="assets">
+
+		{{#each folders}}
+			{{#if subTreeDirSize}}
+				<div class="folder" onclick="window.location='{{url}}'">
+					<a href="{{url}}"><img class="thumb" src="{{thumbUrl}}"/></a>
+					<div class="name"><a href="{{url}}">{{svg "img/assets/folder.svg" class="icon small"}} {{name}}</a></div>
+				</div>
+			{{/if}}
+		{{/each}}
+		<div class="stopper"></div>
+		{{#each files}}
+			{{#if isImage}}
+				<div class="file image x-{{extension}}" onclick="window.location='{{previewUrl}}'">
+					<a href="{{previewUrl}}"><div class="slide" style="background-image:url('{{thumbUrl}}');"></div></a>
+					<div class="name optional small x-{{extension}}"><a href="{{previewUrl}}">{{name}}</a></div>
+				</div>
+			{{/if}}
+		{{/each}}
+		{{#each files}}
+			{{#unless isImage}}
+				<div class="file image other x-{{extension}}" nclick="window.location='{{previewUrl}}'">
+					{{#if isGeneric}}
+						<a href="{{previewUrl}}"><div class="slide">{{svg "img/assets/generic.svg" class="slideicon"}}</div></a>
+					{{else}}
+						<a href="{{previewUrl}}"><div class="slide" style="background-image:url('{{thumbUrl}}');"></div></a>
+					{{/if}}
+					<div class="name optional small x-{{extension}}"><a href="{{previewUrl}}">{{name}}</a></div>
+				</div>
+			{{/unless}}
+		{{/each}}
+		<div class="stopper"></div>
+	</div>
+
+	{{#if isPaged}}
+		<table class='nav'>
+			<tr>
+				<td class="prev">{{#if prevPageUrl}}<a href="{{prevPageUrl}}">{{svg "img/icons/prevnext.svg" class="prev"}}&nbsp;PREV</a>{{/if}}</td>
+				<td class="pagecount">Page {{page}} of {{totalPages}}</td>
+				<td class="next">{{#if nextPageUrl}}<a href="{{nextPageUrl}}">NEXT&nbsp;{{svg "img/icons/prevnext.svg" class="next"}}</a>{{/if}}</td>
+			</tr>
+		</table>
+	{{/if}}
+{{/if}}
+
