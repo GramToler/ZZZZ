@@ -25,7 +25,7 @@
 		"auth-token-txt": "emails/auth-token.txt"
 	},
 	"customColors": [
-		{ "name": "color-tint", "displayName": "Colour Tint", "default": "#457EA6" }
+		{ "name": "color-tint", "displayName": "Color Tint", "default": "#457EA6" }
 	],
 	"serveJson": true
 }
