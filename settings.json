@@ -1,4 +1,5 @@
 {
+	"description": "A theme designed to show Chorus files and folders in a gallery.",
 	"partials": {
 		"file": "pages/file.html",
 		"folder": "pages/folder.html",
